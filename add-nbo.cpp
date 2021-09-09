@@ -16,4 +16,7 @@ int main(int argc, char* argv[]) {
 		a2 += c2[3-i] << (8 * i);
 	}
 	printf("%d(0x%x) + %d(0x%x) = %d(0x%x)\n", a1, a1, a2, a2, a1 + a2, a1 + a2);
+	
+	fclose(fp1);
+	fclose(fp2);
 }
