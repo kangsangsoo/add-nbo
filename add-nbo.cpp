@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
 	a1 = ntohl(a1);
 	a2 = ntohl(a2);
 
-	printf("%d(0x%x) + %d(0x%x) = %d(0x%x)\n", a1, a1, a2, a2, a1 + a2, a1 + a2);
+	printf("%d(%p) + %d(%p) = %d(%p)\n", a1, a1, a2, a2, a1 + a2, a1 + a2);
 	
 	fclose(fp1);
 	fclose(fp2);
