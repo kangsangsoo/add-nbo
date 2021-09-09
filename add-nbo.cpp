@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <cstdint>
+#include <arpa/inet.h>
 
 int main(int argc, char* argv[]) {
 	uint8_t c1[4], c2[4];
@@ -12,9 +13,11 @@ int main(int argc, char* argv[]) {
 	uint32_t a1 = 0, a2 = 0;
 
 	for (int i = 0; i < 4; i++) {
-		a1 += c1[3-i] << (8 * i);
-		a2 += c2[3-i] << (8 * i);
+		a1 += c1[i] << (8 * i);
+		a2 += c2[i] << (8 * i);
 	}
+	a1 = ntohl(a1);
+	a2 = ntohl(a2);
 	printf("%d(0x%x) + %d(0x%x) = %d(0x%x)\n", a1, a1, a2, a2, a1 + a2, a1 + a2);
 	
 	fclose(fp1);
